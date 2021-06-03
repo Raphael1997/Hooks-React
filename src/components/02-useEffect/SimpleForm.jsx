@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react"
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
 
@@ -23,10 +24,12 @@ export const SimpleForm = () => {
         // trabajar los efectos de forma individual
         console.log("Works use effect");
     }, []);
+
     useEffect(() => {
         // trabajar los efectos de forma individual
         console.log("El email ha cambiado");
     }, [email]);
+
     return (
         <>
             <h1>UseEffect</h1>
@@ -38,6 +41,7 @@ export const SimpleForm = () => {
             <div className="form-group">
                 <input type="text" name="email" className="form-control" placeholder="Tu email" autoComplete="off" value={email} onChange={handleInputChange} />
             </div>
+            {(name === "Raphael") && <Message />}
         </>
     )
 }
