@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Memorize } from './components/05-Memo/Memorize';
+import { CallBackHook } from './components/05-Memo/CallBackHook';
+//import { MemoHook } from './components/05-Memo/MemoHook';
+//import { Memorize } from './components/05-Memo/Memorize';
 //import { ExampleUseRef } from './components/04-useRef/ExampleUseRef';
 //import { Layout } from './components/05-useLayoutEffect/LayoutEffect';
 //import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
@@ -13,6 +15,6 @@ import { Memorize } from './components/05-Memo/Memorize';
 import './index.css';
 
 ReactDOM.render(
-  <Memorize />,
+  <CallBackHook />,
   document.getElementById('root')
 );
