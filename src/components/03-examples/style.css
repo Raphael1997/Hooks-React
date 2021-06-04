@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+}
+
+.contenedor {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-image: radial-gradient(circle at 50% -20.71%, #f2ff7c 0, #deff80 8.33%, #c8fe84 16.67%, #b2f888 25%, #9bef8c 33.33%, #84e58f 41.67%, #6cd890 50%, #55cb91 58.33%, #3fc091 66.67%, #26b693 75%, #00ad94 83.33%, #00a696 91.67%, #00a099 100%);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+.card::before, .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.imgBx-title {
+    text-align: center;
+    max-width: 400px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.card .imgBx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .imgBx {
+    bottom: 80px;
+}
+
+.card .imgBx img {
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.card .details {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 350px;
+    padding: 10px;
+    text-align: left;
+}
+
+h4 {
+    color: white;
+    font-weight: 500;
+    
+}
