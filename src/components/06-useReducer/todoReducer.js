@@ -1,15 +1,24 @@
+export const todoReducer = ( state = [], action ) => {
 
-export const todoReducer = (state = [], action) => {
+    switch ( action.type ) {
+        case 'add':
+            return [ ...state, action.payload ];
 
-    switch (action.type) {
-        case "add":
-            return [...state, action.payload]
-        case "delete":
-            return state.filter(todo => todo.id !== action.payload.id);
-        case "toogle":
-            return state.map(todo => {
+        case 'delete':
+            return state.filter( todo => todo.id !== action.payload ); // 123123123
 
-                if (todo.id === action.payload) {
+
+        case 'toggle': 
+            return state.map( todo => 
+                ( todo.id === action.payload )
+                    ? { ...todo, done: !todo.done }
+                    : todo
+            );
+
+        case 'toggle-old':
+            return state.map( todo => {
+
+                if ( todo.id === action.payload ) {
                     return {
                         ...todo,
                         done: !todo.done
@@ -17,15 +26,12 @@ export const todoReducer = (state = [], action) => {
                 } else {
                     return todo;
                 }
+
             })
-/*         case "toggle":
-            return state.map(todo =>
-                (todo.id === action.payload)
-                    ? { ...todo, done: !todo.done }
-                    : todo
-            ); */
+
         default:
             return state;
-
     }
+
+
 }
